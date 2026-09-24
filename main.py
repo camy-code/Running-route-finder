@@ -1,14 +1,23 @@
 
-from maps.fetch import *
 from maps.coordinateCalculator import *
+from m_IO.fetch import * 
 
 def main():
+    m_lat = 51.07735941955526
+    m_long = -114.13480875971634
+    distance = 0.5
 
-    url = "https://api.sunrise-sunset.org/v2?lat=36.7201600&lng=-4.4203400&date=2026-09-22"
+    url = "https://overpass-api.de/api/interpreter"
     print("--------")
-    print(getBound(m_lat=51.136258,m_long=-114.182517, distance=0.5))
+    coor = getBound(m_lat=m_lat,m_long=m_long, distance=distance)
+    print(coor)
 
     # 1. Get the JSON with the needed data and the bound
+    query =constructQuery(coor)
+    data = getData(url=url, query=query)
+
+    print(data)
+    
 
     # 2. Parse this data into a list of nodes and weighted edges
 
