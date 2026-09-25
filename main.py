@@ -3,8 +3,8 @@ from maps.coordinateCalculator import *
 from m_IO.fetch import * 
 
 def main():
-    m_lat = 51.07735941955526
-    m_long = -114.13480875971634
+    m_lat = 51.1360705037541
+    m_long = -114.18248881804557
     distance = 0.5
 
     url = "https://overpass-turbo.eu"
@@ -13,10 +13,10 @@ def main():
     print(coor)
 
     # 1. Get the JSON with the needed data and the bound
-    query =constructQuery(coor)
-    data = getData(url=url, query=query)
+    # query =constructQuery(coor)
+    # data = getData( coor=coor)
   
-    print(data)
+    # print(data)
     
 
     # 2. Parse this data into a list of nodes and weighted edges
