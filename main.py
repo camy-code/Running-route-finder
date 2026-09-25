@@ -7,7 +7,7 @@ def main():
     m_long = -114.13480875971634
     distance = 0.5
 
-    url = "https://overpass-api.de/api/interpreter"
+    url = "https://overpass-turbo.eu"
     print("--------")
     coor = getBound(m_lat=m_lat,m_long=m_long, distance=distance)
     print(coor)
@@ -15,7 +15,7 @@ def main():
     # 1. Get the JSON with the needed data and the bound
     query =constructQuery(coor)
     data = getData(url=url, query=query)
-
+  
     print(data)
     
 
